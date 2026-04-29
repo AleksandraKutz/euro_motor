@@ -1,0 +1,484 @@
+/* ============================================
+   Phoenix European Motors - Stylesheet
+   ============================================ */
+
+:root {
+  --green-dark: #1B3A2D;
+  --green-darker: #152e23;
+  --gold: #C5A55A;
+  --gold-light: #d4b96e;
+  --cream: #F5F2ED;
+  --white: #ffffff;
+  --text-light: #c8c4be;
+  --text-dark: #2c2c2c;
+  --text-muted: #6b6b6b;
+}
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--cream);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- Section Label ---- */
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+.navbar {
+  background-color: var(--green-dark);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--gold);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold-light);
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--gold);
+  transition: all 0.3s;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+.hero {
+  background-color: var(--green-dark);
+  padding: 80px 24px 120px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 850px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.hero-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: var(--gold);
+  margin-bottom: 30px;
+}
+
+.hero-label .line {
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  background-color: var(--gold);
+  opacity: 0.5;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  color: var(--white);
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.hero-brands {
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 6px;
+  color: var(--text-light);
+  margin-bottom: 36px;
+}
+
+.hero-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--gold-light);
+  margin-bottom: 44px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.scroll-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--cream);
+  color: var(--green-dark);
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.scroll-arrow:hover {
+  transform: translateY(4px);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 18px 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-gold {
+  background-color: var(--gold);
+  color: var(--green-dark);
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-light);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--text-light);
+  color: var(--white);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: var(--white);
+}
+
+/* ============================================
+   About
+   ============================================ */
+.about {
+  padding: 90px 24px;
+  text-align: center;
+  background-color: var(--cream);
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  color: var(--green-dark);
+  margin-bottom: 20px;
+}
+
+.about-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ============================================
+   Services
+   ============================================ */
+.services {
+  padding: 80px 24px 100px;
+  text-align: center;
+  background-color: var(--white);
+  border-top: 1px solid #e8e4df;
+}
+
+.services h2 {
+  font-size: 2.2rem;
+  color: var(--green-dark);
+  margin-bottom: 48px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-card {
+  border: 1.5px solid #e0dcd6;
+  border-radius: 10px;
+  padding: 32px 20px;
+  transition: all 0.3s;
+}
+
+.service-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.service-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* ============================================
+   Contact
+   ============================================ */
+.contact {
+  background-color: var(--green-dark);
+  padding: 80px 24px 90px;
+  text-align: center;
+  color: var(--white);
+}
+
+.contact .section-label {
+  color: var(--gold);
+}
+
+.contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-item .contact-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.contact-item p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.contact-item a {
+  transition: color 0.3s;
+}
+
+.contact-item a:hover {
+  color: var(--white);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  background-color: var(--green-darker);
+  padding: 24px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+.footer .disclaimer {
+  margin-top: 16px;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  color: #555;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--green-dark);
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+    padding: 12px 0 20px;
+    gap: 20px;
+  }
+
+  .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-text {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    padding: 70px 24px 80px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about h2,
+  .services h2,
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}

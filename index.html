@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phoenix European Motors | Jaguar, Land Rover & Range Rover Specialists</title>
+  <meta name="description" content="Family-owned workshop specializing in Jaguar, Land Rover and Range Rover. Serving Phoenix and the surrounding area with expert care for British vehicles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logo-transparent.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="images/logo-transparent.png" alt="Phoenix European Motors logo" class="logo-img">
+        <span class="logo-text">PHOENIX EUROPEAN MOTORS</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-label"><span class="line"></span> INDEPENDENT SPECIALISTS <span class="line"></span></p>
+      <h1>Phoenix European Motors</h1>
+      <p class="hero-brands">JAGUAR &middot; LAND ROVER &middot; RANGE ROVER</p>
+      <p class="hero-tagline">Family-owned. Independent. Focused only on what we know best.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-gold">Schedule Service</a>
+        <a href="tel:+14807647476" class="btn btn-outline">(480) 764-7476</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <p class="section-label">ABOUT US</p>
+      <h2>Family-owned. JLR specialists.</h2>
+      <p class="about-text">Phoenix European Motors is a family-owned independent workshop dedicated exclusively to Jaguar, Land Rover and Range Rover vehicles. We are not affiliated with Jaguar Land Rover North America &mdash; we're independent specialists who chose to focus on what we know best. Our clients come to us for dealership-level expertise with the personal service only an independent shop can provide.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <p class="section-label">OUR SERVICES</p>
+      <h2>What we do</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Computer Diagnostics</h3>
+        </div>
+        <div class="service-card">
+          <h3>Oil Service</h3>
+        </div>
+        <div class="service-card">
+          <h3>Suspension</h3>
+        </div>
+        <div class="service-card">
+          <h3>Brake Service</h3>
+        </div>
+        <div class="service-card">
+          <h3>Engine Repair</h3>
+        </div>
+        <div class="service-card">
+          <h3>General Service</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <p class="section-label">VISIT US</p>
+      <h2>Get in touch</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <p class="contact-label">ADDRESS</p>
+          <p>4033 E University Dr</p>
+          <p>Phoenix, Arizona 85040</p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">CONTACT</p>
+          <p><a href="tel:+14807647476">(480) 764-7476</a></p>
+          <p><a href="mailto:info@phoenixeuropeanmotors.com">info@phoenixeuropeanmotors.com</a></p>
+        </div>
+        <div class="contact-item">
+          <p class="contact-label">HOURS</p>
+          <p>Mon &ndash; Fri</p>
+          <p>9:00 AM &ndash; 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 PHOENIX EUROPEAN MOTORS &middot; PHOENIX, AZ</p>
+      <p class="disclaimer">Phoenix European Motors is an independent repair facility and is not affiliated with, sponsored by, or endorsed by Jaguar Land Rover North America, LLC. All manufacturer names, logos, and trademarks are property of their respective owners and are used for identification purposes only.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        toggle.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
