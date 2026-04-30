@@ -19,11 +19,32 @@
       <a href="#" class="nav-logo">
         <img src="images/logo_2.png" alt="Phoenix European Motors logo" class="logo-img">
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-mobile-icons">
+        <a href="#about" class="nav-mobile-icon" aria-label="About">
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10.5L12 3l9 7.5V21H3V10.5z"/><path d="M9 21V14h6v7"/></svg>
+          </div>
+          <span>ABOUT</span>
+        </a>
+        <a href="#services" class="nav-mobile-icon" aria-label="Services">
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <span>SERVICES</span>
+        </a>
+        <a href="#contact" class="nav-mobile-icon" aria-label="Contact">
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span>CONTACT</span>
+        </a>
+        <a href="#map-section" class="nav-mobile-icon" aria-label="Map">
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span>MAP</span>
+        </a>
+      </div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
@@ -35,13 +56,16 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <p class="hero-label"><span class="line"></span> INDEPENDENT SPECIALISTS <span class="line"></span></p>
+      <p class="hero-srm">SERVICE &middot; REPAIR &middot; MAINTENANCE</p>
+      <p class="hero-independent">INDEPENDENT SPECIALISTS</p>
+      <div class="hero-divider"><span class="divider-line"></span><span class="divider-diamond"></span><span class="divider-line"></span></div>
       <h1>Phoenix European Motors</h1>
       <p class="hero-brands">JAGUAR &middot; LAND ROVER &middot; RANGE ROVER</p>
-      <p class="hero-tagline">Family-owned. Independent. Focused only on what we know best.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-gold">Schedule Service</a>
-        <a href="tel:+14807647476" class="btn btn-outline">(480) 764-7476</a>
+      <p class="hero-tagline">Family-owned. Focused only on what we know best.</p>
+      <div class="hero-call-mobile">
+        <div class="section-divider section-divider-light"><span class="divider-line"></span><span class="divider-diamond"></span><span class="divider-line"></span></div>
+        <p class="hero-call-label">CALL US TODAY</p>
+        <a href="tel:+14807647476" class="hero-call-number">(480) 764-7476</a>
       </div>
     </div>
   </section>
@@ -100,7 +124,7 @@
       <p class="section-label">VISIT THE WORKSHOP</p>
       <div class="section-divider section-divider-light"><span class="divider-line"></span><span class="divider-diamond"></span><span class="divider-line"></span></div>
       <div class="contact-layout">
-        <div class="contact-map">
+        <div class="contact-map contact-map-desktop">
           <iframe src="https://maps.google.com/maps?q=4033+E+University+Dr,+Phoenix,+AZ+85040&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="contact-info">
@@ -118,6 +142,14 @@
 
           <p class="contact-label">HOURS</p>
           <p>Monday &ndash; Friday &middot; 8:00 AM &ndash; 5:00 PM</p>
+
+        </div>
+      </div>
+      <div id="map-section" class="map-section">
+        <a href="https://maps.google.com/maps?q=4033+E+University+Dr,+Phoenix,+AZ+85040&z=15" target="_blank" class="get-directions-link">GET DIRECTIONS</a>
+        <div class="section-divider section-divider-light"><span class="divider-line"></span><span class="divider-diamond"></span><span class="divider-line"></span></div>
+        <div class="contact-map">
+          <iframe src="https://maps.google.com/maps?q=4033+E+University+Dr,+Phoenix,+AZ+85040&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -133,22 +165,6 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      toggle.classList.toggle('active');
-    });
-
-    // Close menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        toggle.classList.remove('active');
-      });
-    });
-
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
