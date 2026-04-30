@@ -677,7 +677,8 @@ a {
   }
 
   .hero {
-    padding: 30px 24px 200px;
+    padding: 20px 24px 60px;
+    min-height: 100vh;
   }
 
   .hero-label {
@@ -694,6 +695,13 @@ a {
     font-size: 0.8rem;
     letter-spacing: 3px;
     white-space: nowrap;
+  }
+
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .about .section-divider {
@@ -767,6 +775,7 @@ a {
 
   .services {
     padding: 60px 2px 80px;
+    min-height: 100vh;
   }
 
   .services .container {
@@ -781,6 +790,10 @@ a {
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .contact {
+    min-height: 100vh;
   }
 
   .contact-map-desktop {
