@@ -176,6 +176,20 @@ a {
   color: var(--gold-light);
 }
 
+.hero-phone {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  color: var(--white);
+  text-align: center;
+  margin-top: 20px;
+  transition: color 0.3s;
+}
+
+.hero-phone:hover {
+  color: var(--gold);
+}
+
 .hero-call-mobile {
   display: none;
 }
@@ -708,9 +722,13 @@ a {
     margin-bottom: 28px;
   }
 
+  .hero-phone {
+    display: none;
+  }
+
   .hero-tagline {
     font-size: 1rem;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 10px;
   }
 
