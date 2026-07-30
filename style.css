@@ -176,13 +176,39 @@ a {
   color: var(--gold-light);
 }
 
+.mini-diamond {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--gold);
+  transform: rotate(45deg);
+  opacity: 0.6;
+  vertical-align: middle;
+}
+
+.hero-call-desktop {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.hero-call-desktop .section-divider {
+  margin-bottom: 10px;
+}
+
+.hero-call-desktop .hero-call-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
 .hero-phone {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: var(--white);
   text-align: center;
-  margin-top: 20px;
   transition: color 0.3s;
 }
 
@@ -722,7 +748,7 @@ a {
     margin-bottom: 28px;
   }
 
-  .hero-phone {
+  .hero-call-desktop {
     display: none;
   }
 
