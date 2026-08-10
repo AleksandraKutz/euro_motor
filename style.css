@@ -793,8 +793,8 @@ a {
   .hero h1 { order: 4; }
   .hero-brands { order: 5; }
   .hero-tagline { order: 6; }
-  .hero-call-mobile { order: 7; }
-  .hero-reel { order: 8; }
+  .hero-reel { order: 7; margin-top: 20px; }
+  .hero-call-mobile { order: 8; }
   .hero-call-desktop { order: 99; }
 
   .hero-reel-arrow {
@@ -848,7 +848,7 @@ a {
 
   .hero-call-mobile {
     display: block;
-    margin-top: 5px;
+    margin-top: 16px;
     text-align: center;
   }
 
