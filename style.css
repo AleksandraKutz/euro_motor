@@ -51,7 +51,7 @@ a {
 
 /* ---- Section Label ---- */
 #about {
-  scroll-margin-top: 190px;
+  scroll-margin-top: 140px;
 }
 
 #services {
@@ -76,7 +76,7 @@ a {
    ============================================ */
 .navbar {
   background-color: var(--green-dark);
-  padding: 12px 0;
+  padding: 2px 0 4px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -96,11 +96,12 @@ a {
   align-items: center;
   gap: 6px;
   margin-left: -20px;
+  margin-top: -6px;
 }
 
 .logo-img {
-  width: 148px;
-  height: 148px;
+  width: 161px;
+  height: 161px;
   object-fit: contain;
 }
 
@@ -188,11 +189,7 @@ a {
 
 .hero-call-desktop {
   text-align: center;
-  margin-top: 10px;
-}
-
-.hero-call-desktop .section-divider {
-  margin-bottom: 10px;
+  margin-top: 16px;
 }
 
 .hero-call-desktop .hero-call-label {
@@ -200,7 +197,7 @@ a {
   font-weight: 500;
   letter-spacing: 4px;
   color: var(--gold);
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .hero-phone {
@@ -209,11 +206,75 @@ a {
   font-size: 2rem;
   color: var(--white);
   text-align: center;
+  letter-spacing: 4px;
   transition: color 0.3s;
+}
+
+.hero-call-desktop .section-divider {
+  margin-bottom: 4px;
+  margin-top: 0;
 }
 
 .hero-phone:hover {
   color: var(--gold);
+}
+
+.hero-reel {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 190px;
+  border: none;
+  margin-top: 5px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-reel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100%;
+  flex: 1 1 auto;
+  scrollbar-width: none;
+}
+
+.hero-reel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-reel-track img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  display: block;
+  flex: 0 0 auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.hero-reel-arrow {
+  flex: 0 0 90px;
+  height: 100%;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+  padding: 0;
+  line-height: 1;
+}
+
+.hero-reel-arrow:hover {
+  color: var(--gold-light);
 }
 
 .hero-call-mobile {
@@ -243,7 +304,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 }
 
 .hero-divider .divider-line {
@@ -266,7 +327,7 @@ a {
    ============================================ */
 .hero {
   background-color: var(--green-dark);
-  padding: 80px 24px 160px;
+  padding: 5px 24px 20px;
   text-align: center;
 }
 
@@ -299,7 +360,7 @@ a {
 .hero h1 {
   font-size: 4.2rem;
   color: var(--white);
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   line-height: 1.1;
 }
 
@@ -308,7 +369,7 @@ a {
   font-weight: 400;
   letter-spacing: 6px;
   color: var(--text-light);
-  margin-bottom: 36px;
+  margin-bottom: 22px;
 }
 
 .hero-tagline {
@@ -316,7 +377,7 @@ a {
   font-size: 1.3rem;
   font-style: italic;
   color: var(--gold-light);
-  margin-bottom: 44px;
+  margin-bottom: 0;
 }
 
 .hero-buttons {
@@ -703,7 +764,7 @@ a {
   }
 
   .navbar {
-    padding: 6px 0;
+    padding: 6px 0 0;
   }
 
   .nav-logo {
@@ -717,8 +778,35 @@ a {
   }
 
   .hero {
-    padding: 55px 24px 60px;
+    padding: 10px 24px 60px;
     min-height: 100vh;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-srm { order: 1; }
+  .hero-independent { order: 2; }
+  .hero-divider { order: 3; }
+  .hero h1 { order: 4; }
+  .hero-brands { order: 5; }
+  .hero-tagline { order: 6; }
+  .hero-call-mobile { order: 7; }
+  .hero-reel { order: 8; }
+  .hero-call-desktop { order: 99; }
+
+  .hero-reel-arrow {
+    display: none;
+  }
+
+  .hero-reel-track {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hero-reel-track img {
+    pointer-events: auto;
   }
 
   .hero-label {
@@ -754,13 +842,13 @@ a {
 
   .hero-tagline {
     font-size: 1rem;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: -15px;
+    margin-bottom: 0;
   }
 
   .hero-call-mobile {
     display: block;
-    margin-top: 20px;
+    margin-top: 5px;
     text-align: center;
   }
 
@@ -782,7 +870,7 @@ a {
     font-weight: 500;
     letter-spacing: 3px;
     color: var(--gold);
-    margin-bottom: 6px;
+    margin-bottom: 2px;
   }
 
   .hero-call-number {
@@ -790,6 +878,7 @@ a {
     font-size: 1.5rem;
     color: var(--white);
     font-weight: 400;
+    letter-spacing: 4px;
   }
 
   #about {
