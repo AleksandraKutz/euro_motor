@@ -782,16 +782,9 @@ a {
     min-height: 100vh;
   }
 
-  .hero {
-    display: flex;
-    flex-direction: column;
-  }
-
   .hero-content {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    justify-content: space-evenly;
   }
 
   .hero-srm { order: 1; }
