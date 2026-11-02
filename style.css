@@ -922,6 +922,50 @@ a {
   color: var(--white);
 }
 
+.contact-links {
+  display: inline-flex;          /* shrink to content so the column can be centred as a block */
+  flex-direction: column;
+  align-items: flex-start;       /* icons line up in one column */
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 300;
+  transition: color 0.3s;
+}
+
+.contact-social-icon {
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-social-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.contact-links a:hover { color: var(--white); }
+.contact-links a:hover .contact-social-icon { background: var(--gold); color: var(--green-darker); }
+
+@media (max-width: 768px) {
+  .contact-links a { font-size: 0.95rem; }
+  .contact-fb-prefix { display: none; }   /* phones: keep the line short */
+}
+
 .contact-divider {
   width: 50px;
   height: 2px;
@@ -1061,7 +1105,7 @@ a {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    margin-top: 22px;
+    margin-top: 36px;     /* equal to the hero's bottom padding: badges sit centred in the green band */
   }
   .hero-badges-mobile .bbb-seal img { width: 190px; }
   .hero-badges-mobile .gbadge { padding: 6px 10px; gap: 7px; }
@@ -1098,6 +1142,13 @@ a {
     font-size: 0.8rem;
     letter-spacing: 3px;
     white-space: nowrap;
+  }
+
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .about .section-divider {
@@ -1193,12 +1244,12 @@ a {
   .map-section {
     display: block;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 48px;
   }
 
   .contact-info {
     order: -1;
-    margin-top: -20px;
+    margin-top: 0;
   }
 
   .map-section .contact-map {
@@ -1292,6 +1343,14 @@ a {
 .gbadge-stars { position: relative; display: inline-block; font-size: 15px; color: #dadce0; letter-spacing: 1px; }
 .gbadge-fill { position: absolute; left: 0; top: 0; overflow: hidden; white-space: nowrap; color: #fbbc04; }
 .gbadge-count { font-size: 11px; color: #5f6368; }
+
+.contact-badges {
+  display: none;            /* desktop: badges already sit under the menu */
+}
+
+@media (max-width: 768px) {
+  .contact-badges { display: block; }
+}
 
 .contact-gbadge {
   display: flex;
@@ -1611,4 +1670,34 @@ a {
   .review { padding: 24px 20px 20px; }
   .review p { font-size: 0.95rem; }
 
+}
+
+/* Contact column: blocks separated by the gold divider */
+.contact-block + .contact-block::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: var(--gold);
+  opacity: 0.4;
+  margin: 26px auto;
+}
+
+.map-address { display: none; }
+
+@media (max-width: 768px) {
+  .contact-block--address { display: none; }     /* phones: address sits with the map */
+  .contact-block--hours::before { display: none !important; }
+  .contact-block--hours { margin-top: 0; }
+  .map-address {
+    display: block;
+    margin: -22px 0 0;     /* pull up so it sits halfway between the divider and the map */
+  }
+  .map-address h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    font-weight: 400;
+    line-height: 1.4;
+  }
 }
