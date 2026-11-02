@@ -976,3 +976,21 @@ a {
     gap: 6px;
   }
 }
+
+/* BBB Accredited Business seal (contact section) */
+.bbb-seal {
+  display: flex;
+  justify-content: center;
+}
+
+.bbb-seal img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.92;
+  transition: opacity 0.3s;
+}
+
+.bbb-seal a:hover img {
+  opacity: 1;
+}
