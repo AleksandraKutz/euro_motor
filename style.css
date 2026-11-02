@@ -571,26 +571,101 @@ a {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 900px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
 .service-card {
-  background: var(--white);
-  border: none;
-  border-top: 3px solid var(--gold);
-  border-radius: 4px;
-  padding: 28px 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--green-dark);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  isolation: isolate;
+}
+
+.service-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.4s;
+  filter: saturate(0.9);
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(16, 36, 28, 0.94) 0%,
+    rgba(16, 36, 28, 0.72) 34%,
+    rgba(16, 36, 28, 0.18) 62%,
+    rgba(16, 36, 28, 0.00) 100%);
+  transition: background 0.4s;
+  z-index: 1;
+}
+
+.service-card-body {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px 14px 14px;
+  z-index: 2;
+  text-align: left;
+  color: var(--white);
 }
 
 .service-card h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
+  font-size: 1.02rem;
   font-weight: 700;
-  color: var(--green-dark);
+  line-height: 1.2;
+  color: var(--white);
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
+
+.service-card-line {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--gold);
+  margin: 8px 0 7px;
+  transition: width 0.4s;
+}
+
+.service-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.86);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+}
+
+.service-card:hover img,
+.service-card:focus-within img {
+  transform: scale(1.08);
+  filter: saturate(1);
+}
+
+.service-card:hover .service-card-line {
+  width: 44px;
+}
+
+.service-card:hover p,
+.service-card:focus-within p {
+  max-height: 4em;
+  opacity: 1;
 }
 
 /* ============================================
@@ -900,14 +975,6 @@ a {
     scroll-margin-top: 50px;
   }
 
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-
-  .service-card {
-    padding: 12px 8px;
-  }
 
   .service-card h3 {
     font-size: 0.9rem;
@@ -922,10 +989,6 @@ a {
     padding: 0 4px;
   }
 
-  .services-grid {
-    gap: 5px;
-    max-width: 100%;
-  }
 
   .contact-layout {
     grid-template-columns: 1fr;
@@ -972,12 +1035,6 @@ a {
   }
 }
 
-@media (max-width: 480px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-  }
-}
 
 /* BBB Accredited Business seal */
 .bbb-seal {
@@ -1023,5 +1080,47 @@ a {
 @media (max-width: 768px) {
   .bbb-seal--nav {
     display: none;
+  }
+}
+
+/* Services: tablet and phone */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 16px 70px;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 520px;
+  }
+  .service-card {
+    border-radius: 5px;
+    aspect-ratio: 1 / 1;   /* square on phones: photo keeps the top half */
+  }
+  .service-card-body {
+    padding: 12px 12px 12px;
+  }
+  .service-card h3 {
+    font-size: 0.98rem;
+  }
+  /* no hover on touch: show the description by default, compact */
+  .service-card p {
+    max-height: 4em;
+    opacity: 1;
+    font-size: 0.68rem;
+  }
+  .service-card::after {
+    background: linear-gradient(to top,
+      rgba(16, 36, 28, 0.95) 0%,
+      rgba(16, 36, 28, 0.80) 32%,
+      rgba(16, 36, 28, 0.20) 56%,
+      rgba(16, 36, 28, 0.00) 72%);
   }
 }
