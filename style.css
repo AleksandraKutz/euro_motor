@@ -977,20 +977,42 @@ a {
   }
 }
 
-/* BBB Accredited Business seal (contact section) */
+/* BBB Accredited Business seal */
 .bbb-seal {
   display: flex;
   justify-content: center;
 }
 
-.bbb-seal img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  opacity: 0.92;
-  transition: opacity 0.3s;
+.bbb-seal a {
+  display: inline-block;
+  line-height: 0;
+  transition: transform 0.3s, filter 0.3s;
 }
 
-.bbb-seal a:hover img {
-  opacity: 1;
+.bbb-seal a:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.bbb-seal img {
+  display: block;
+  width: 293px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hero placement: under the phone number */
+.bbb-seal--hero {
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .bbb-seal--hero {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .bbb-seal--hero img {
+    width: 250px;
+  }
 }
