@@ -191,7 +191,8 @@ a {
 
 .hero-call-desktop {
   text-align: center;
-  margin-top: 16px;
+  margin-top: 14px;
+  margin-bottom: 18px;
 }
 
 .hero-call-desktop .hero-call-label {
@@ -199,12 +200,13 @@ a {
   font-weight: 500;
   letter-spacing: 4px;
   color: var(--gold);
-  margin-bottom: 0;
+  margin-bottom: 6px;
 }
 
 .hero-phone {
   display: block;
   font-family: 'Playfair Display', serif;
+  font-variant-numeric: lining-nums;
   font-size: 2rem;
   color: var(--white);
   text-align: center;
@@ -213,7 +215,7 @@ a {
 }
 
 .hero-call-desktop .section-divider {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   margin-top: 0;
 }
 
@@ -279,7 +281,8 @@ a {
   color: var(--gold-light);
 }
 
-.hero-call-mobile {
+.hero-call-mobile,
+.hero-badges-mobile {
   display: none;
 }
 
@@ -511,7 +514,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   gap: 56px;
-  align-items: center;
+  align-items: start;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -521,6 +524,9 @@ a {
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(27, 58, 45, 0.18);
   position: relative;
+  position: sticky;
+  top: 120px;             /* stays put while the story expands below */
+  margin-top: 46px;       /* lines up with the heading, not the small label */
 }
 
 .about-media::after {           /* thin gold frame inset */
@@ -545,12 +551,12 @@ a {
 }
 
 .about-content .section-label {
-  text-align: left;
+  text-align: center;      /* centered over the text column */
   margin-bottom: 10px;
 }
 
 .about-content .section-divider {
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 26px;
 }
 
@@ -607,6 +613,14 @@ a {
   margin-bottom: 22px;
 }
 
+.about-more {
+  text-align: center;      /* toggle centered over the text column */
+}
+
+.about-story {
+  text-align: left;
+}
+
 .about-more summary {
   list-style: none;
   cursor: pointer;
@@ -651,45 +665,6 @@ a {
   line-height: 1.8;
   font-weight: 300;
   margin-bottom: 14px;
-}
-
-/* Brands strip under the hero */
-.brands-strip {
-  background-color: var(--green-darker);
-  border-top: 1px solid rgba(197, 165, 90, 0.18);
-  padding: 16px 24px;
-}
-
-.brands-strip ul {
-  list-style: none;
-  margin: 0; padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px 0;
-}
-
-.brands-strip li {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold);
-  opacity: 0.85;
-  padding: 0 14px;
-  position: relative;
-  white-space: nowrap;
-}
-
-.brands-strip li + li::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 50%;
-  width: 3px; height: 3px;
-  background: var(--gold);
-  opacity: 0.6;
-  transform: translateY(-50%) rotate(45deg);
 }
 
 /* Services bottom line */
@@ -1078,8 +1053,23 @@ a {
   .hero h1 { order: 4; }
   .hero-brands { order: 5; }
   .hero-tagline { order: 6; }
-  .hero-reel { order: 7; margin-top: 20px; }
-  .hero-call-mobile { order: 8; }
+  .hero-call-mobile { order: 7; }
+  .hero-reel { order: 8; margin-top: 26px; }
+  .hero-badges-mobile {
+    order: 9;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .hero-badges-mobile .bbb-seal img { width: 190px; }
+  .hero-badges-mobile .gbadge { padding: 6px 10px; gap: 7px; }
+  .hero-badges-mobile .gbadge-logo { width: 24px; height: 24px; }
+  .hero-badges-mobile .gbadge-title { font-size: 10px; }
+  .hero-badges-mobile .gbadge-score { font-size: 14px; }
+  .hero-badges-mobile .gbadge-stars { font-size: 12px; }
+  .hero-badges-mobile .gbadge-count { font-size: 9.5px; }
   .hero-call-desktop { order: 99; }
 
   .hero-reel-arrow {
@@ -1152,6 +1142,7 @@ a {
   }
 
   .hero-call-mobile .hero-call-number {
+    font-variant-numeric: lining-nums;
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     color: var(--white);
@@ -1256,12 +1247,56 @@ a {
   height: auto;
 }
 
-/* Desktop: seal under the top-right menu */
+/* Desktop: badges under the top-right menu */
 .nav-right {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
+}
+
+.nav-badges {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+}
+
+.nav-badges .bbb-seal img {
+  width: 240px;
+  height: auto;
+}
+
+/* Google reviews badge */
+.gbadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px;
+  background: var(--white);
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  color: #202124;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.25s, transform 0.25s;
+  line-height: 1.15;
+}
+
+.gbadge:hover { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22); transform: translateY(-1px); }
+.gbadge-logo { width: 30px; height: 30px; flex: none; }
+.gbadge-body { display: flex; flex-direction: column; }
+.gbadge-title { font-size: 12px; font-weight: 700; letter-spacing: 0.2px; }
+.gbadge-row { display: flex; align-items: center; gap: 6px; }
+.gbadge-score { font-size: 17px; font-weight: 700; color: #e37400; }
+.gbadge-stars { position: relative; display: inline-block; font-size: 15px; color: #dadce0; letter-spacing: 1px; }
+.gbadge-fill { position: absolute; left: 0; top: 0; overflow: hidden; white-space: nowrap; color: #fbbc04; }
+.gbadge-count { font-size: 11px; color: #5f6368; }
+
+.contact-gbadge {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
 }
 
 /* Mobile: seal under the phone number in the hero */
@@ -1273,8 +1308,10 @@ a {
   width: 250px;
 }
 
+
+
 @media (max-width: 768px) {
-  .bbb-seal--nav {
+  .nav-badges {           /* BBB + Google badges live in the hero / contact on phones */
     display: none;
   }
 }
@@ -1328,7 +1365,7 @@ a {
     gap: 34px;
     max-width: 560px;
   }
-  .about-media { order: -1; }
+  .about-media { order: -1; position: relative; top: auto; margin-top: 0; }   /* relative keeps the frame inside the photo */
 }
 
 @media (max-width: 768px) {
@@ -1339,33 +1376,7 @@ a {
   .about-facts strong { font-size: 1.6rem; }
   .about-facts span { font-size: 0.66rem; letter-spacing: 0.6px; }
   .about-lead { font-size: 0.98rem; }
-  .brands-strip { padding: 11px 8px; }
-  .brands-strip ul { gap: 4px 0; }
-  .brands-strip li { font-size: 0.58rem; letter-spacing: 1.6px; padding: 0 8px; }
   .services-cta { font-size: 1rem; margin-top: 34px; }
-}
-
-/* ============================================
-   Gold button (hero phone on desktop)
-   ============================================ */
-.btn-gold {
-  display: inline-block !important;
-  background: var(--gold);
-  color: var(--green-darker) !important;
-  padding: 14px 34px;
-  border-radius: 3px;
-  font-size: 1.6rem !important;
-  letter-spacing: 3px !important;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s !important;
-  margin-top: 6px;
-}
-
-.btn-gold:hover {
-  background: var(--gold-light);
-  color: var(--green-darker) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
 }
 
 /* ============================================
@@ -1378,27 +1389,35 @@ a {
   border-top: 1px solid #e8e4df;
 }
 
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  max-width: 1080px;
+.work-slider {
+  position: relative;
+  max-width: 980px;
   margin: 0 auto;
 }
 
-.work-item {
-  margin: 0;
+.work-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
   border-radius: 8px;
-  overflow: hidden;
-  background: var(--white);
   box-shadow: 0 10px 28px rgba(27, 58, 45, 0.14);
+  background: var(--white);
+}
+
+.work-track::-webkit-scrollbar { display: none; }
+
+.work-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  margin: 0;
 }
 
 .work-item img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1616 / 600;
   object-fit: cover;
 }
 
@@ -1424,6 +1443,48 @@ a {
   text-transform: uppercase;
   color: var(--text-muted);
 }
+
+.work-arrow {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: var(--green-dark);
+  color: var(--gold);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s, color 0.3s;
+  padding: 0 0 4px;
+}
+
+.work-arrow:hover { background: var(--gold); color: var(--green-darker); }
+.work-arrow--left { left: -22px; }
+.work-arrow--right { right: -22px; }
+
+.work-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.work-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.35;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.work-dot.is-active { opacity: 1; transform: scale(1.25); }
 
 /* ============================================
    Reviews
@@ -1536,22 +1597,13 @@ a {
   color: var(--green-darker);
 }
 
-/* ============================================
-   Mobile sticky call bar
-   ============================================ */
-.call-bar {
-  display: none;
-}
-
 @media (max-width: 768px) {
-  .btn-gold {               /* desktop-only styling; phone keeps its own hero number */
-    background: none;
-    box-shadow: none;
-    padding: 0;
-  }
 
   .work { padding: 56px 16px 60px; }
-  .work-grid { grid-template-columns: 1fr; gap: 18px; max-width: 520px; }
+  .work-slider { max-width: 100%; }
+  .work-arrow { width: 36px; height: 36px; font-size: 22px; top: 38%; }
+  .work-arrow--left { left: 6px; }
+  .work-arrow--right { right: 6px; }
   .work-item figcaption { padding: 12px 14px; flex-direction: column; gap: 3px; }
   .work-item figcaption strong { white-space: nowrap; }
   .work-item figcaption span { font-size: 0.66rem; letter-spacing: 1.5px; }
@@ -1561,33 +1613,4 @@ a {
   .review { padding: 24px 20px 20px; }
   .review p { font-size: 0.95rem; }
 
-  .call-bar {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    background: var(--gold);
-    color: var(--green-darker);
-    padding: 13px 16px calc(13px + env(safe-area-inset-bottom));
-    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.25);
-    text-decoration: none;
-  }
-
-  .call-bar-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-  }
-
-  .call-bar-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    letter-spacing: 1.5px;
-  }
-
-  body { padding-bottom: 64px; }   /* keep the footer clear of the bar */
 }
