@@ -601,7 +601,8 @@
       function index() { return Math.round(track.scrollLeft / track.clientWidth); }
       function go(i) {
         i = Math.max(0, Math.min(items.length - 1, i));
-        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+        var left = i * track.clientWidth;
+        try { track.scrollTo({ left: left, behavior: 'smooth' }); } catch (e) { track.scrollLeft = left; }
       }
       left.addEventListener('click', function () { go(index() - 1); });
       right.addEventListener('click', function () { go(index() + 1); });

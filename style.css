@@ -1601,9 +1601,7 @@ a {
 
   .work { padding: 56px 16px 60px; }
   .work-slider { max-width: 100%; }
-  .work-arrow { width: 36px; height: 36px; font-size: 22px; top: 38%; }
-  .work-arrow--left { left: 6px; }
-  .work-arrow--right { right: 6px; }
+  .work-arrow { display: none; }   /* phones: swipe, dots show there is more */
   .work-item figcaption { padding: 12px 14px; flex-direction: column; gap: 3px; }
   .work-item figcaption strong { white-space: nowrap; }
   .work-item figcaption span { font-size: 0.66rem; letter-spacing: 1.5px; }
