@@ -1001,18 +1001,25 @@ a {
   height: auto;
 }
 
-/* Hero placement: under the phone number */
+/* Desktop: seal under the top-right menu */
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Mobile: seal under the phone number in the hero */
 .bbb-seal--hero {
-  margin-top: 18px;
-  margin-bottom: 12px;
+  margin-top: 20px;
+}
+
+.bbb-seal--hero img {
+  width: 250px;
 }
 
 @media (max-width: 768px) {
-  .bbb-seal--hero {
-    margin-top: 20px;
-    margin-bottom: 0;
-  }
-  .bbb-seal--hero img {
-    width: 250px;
+  .bbb-seal--nav {
+    display: none;
   }
 }
