@@ -183,7 +183,7 @@
       <div class="hero-call-desktop">
         <div class="section-divider section-divider-light"><span class="divider-line"></span><span class="divider-diamond"></span><span class="divider-line"></span></div>
         <p class="hero-call-label">CALL US TODAY</p>
-        <a href="tel:+14807647476" class="hero-phone">(480) 764-7476</a>
+        <a href="tel:+14807647476" class="hero-phone btn-gold">(480) 764-7476</a>
       </div>
       <div class="hero-reel">
         <button class="hero-reel-arrow hero-reel-arrow--left" aria-label="Scroll left">&#8249;</button>
@@ -347,6 +347,51 @@
     </div>
   </section>
 
+  <!-- Recent work (before / after) -->
+  <section class="work">
+    <div class="container">
+      <p class="section-label">RECENT WORK</p>
+      <div class="section-divider"><span class="divider-line"></span><span class="divider-diamond"></span><span class="divider-line"></span></div>
+      <div class="work-grid">
+        <figure class="work-item">
+          <img src="images/work/mercedes-brakes.jpg" srcset="images/work/mercedes-brakes.jpg 700w, images/work/mercedes-brakes@2x.jpg 1400w" sizes="(max-width: 768px) 100vw, 520px" width="700" height="438" alt="Mercedes-Benz brake rotor and caliper, before and after replacement" loading="lazy">
+          <figcaption><strong>Mercedes-Benz</strong><span>Brake rotors &amp; calipers</span></figcaption>
+        </figure>
+        <figure class="work-item">
+          <img src="images/work/rangerover-heads.jpg" srcset="images/work/rangerover-heads.jpg 700w, images/work/rangerover-heads@2x.jpg 1400w" sizes="(max-width: 768px) 100vw, 520px" width="700" height="438" alt="Range Rover engine block, before and after cleaning and head gasket work" loading="lazy">
+          <figcaption><strong>Range Rover</strong><span>Engine block &amp; head gaskets</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="reviews">
+    <div class="container">
+      <p class="section-label">WHAT OUR CUSTOMERS SAY</p>
+      <div class="section-divider"><span class="divider-line"></span><span class="divider-diamond"></span><span class="divider-line"></span></div>
+      <p class="reviews-score"><span class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <strong>5.0</strong> on Google</p>
+      <div class="reviews-grid">
+        <blockquote class="review">
+          <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;What impressed me most is how quickly he can narrow down a problem just by listening to the engine. After having some disappointing experiences with other mechanics, finding Karol was a huge relief.&rdquo;</p>
+          <footer><strong>Kilian Z.</strong><span>Land Rover</span></footer>
+        </blockquote>
+        <blockquote class="review">
+          <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;He is a true craftsman, paying much attention to the details. My F-Pace needed an engine replacement after it spun a bearing, and I am extremely satisfied with the work he performed on this big job.&rdquo;</p>
+          <footer><strong>Richard D.</strong><span>Jaguar F-Pace</span></footer>
+        </blockquote>
+        <blockquote class="review">
+          <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p>&ldquo;They are honest, helpful, and they were able to get everything taken care of the same day. Karol was phenomenal to work with and made the whole experience easy. Highly recommend!&rdquo;</p>
+          <footer><strong>Andre F.</strong><span>Google review</span></footer>
+        </blockquote>
+      </div>
+      <a href="https://www.google.com/maps/place/Phoenix+European+Motors/@33.4215168,-111.9936673,17z/data=!4m8!3m7!1s0x872b0f8f14cdfec3:0x3c17fd57a554c6c!8m2!3d33.4215168!4d-111.9936673!9m1!1b1!16s%2Fg%2F11zbglsgz3" target="_blank" rel="noopener" class="reviews-link">READ ALL REVIEWS ON GOOGLE</a>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
@@ -489,6 +534,12 @@
       bindArrow(rightBtn, 1);
     })();
   </script>
+
+  <!-- Mobile sticky call bar -->
+  <a href="tel:+14807647476" class="call-bar" aria-label="Call Phoenix European Motors">
+    <span class="call-bar-label">CALL NOW</span>
+    <span class="call-bar-number">(480) 764-7476</span>
+  </a>
 
 </body>
 </html>
